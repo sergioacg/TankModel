@@ -1,4 +1,7 @@
-% Modelagem dos Tanques em Cascata
+%% Modelagem dos Tanques em Cascata
+% Sergio Andrés Castaño Giraldo
+% https://github.com/sergioacg/TankModel
+
 clc
 clear all
 close all
