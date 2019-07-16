@@ -30,8 +30,7 @@ par.a2 = a2;
 %Entrada
 F1=1.75;
 F2=1;
-u.F1=F1;
-u.F2=F2;
+u=[F1 F2];
 
 %Condição inicial
 x0=[0.1  0.1];
@@ -45,12 +44,15 @@ plot(t,x(:,1),[t(1) t(end)],[F1 F1],'linewidth',2)
 title('Altura h_1');
 ylabel('h_1');
 xlabel('tempo (s)');
+set(gca,'fontsize',FS)
 
 figure
 plot(t,x(:,2),[t(1) t(end)],[F2 F2],'linewidth',2)
 title('Altura h_2');
 ylabel('h_2');
 xlabel('tempo (s)');
+set(gca,'fontsize',FS)
+
 
 %Grafico estacionario
 F1x=0:0.1:3;
@@ -69,6 +71,7 @@ plot(F1x,H2x),grid
 title('Variación de nivel h2');
 ylabel('Variação F1 com F2=1');
 xlabel('Abertura de Valvula a1');
+set(gca,'fontsize',FS)
 
 %Encuentra el estado Estacionario
 X = fsolve(@(x)TwoSphericalT(t,x,u,par),x0); %X=[h1 h2]
@@ -143,7 +146,7 @@ K = zpk(z,P,k)
 
 %Comprobar Modelo Lineal VS Modelo NO Lineal
 du=0.1;
-u.F1=u.F1+du;
+u(1)=F1+du;
 [t,x] = ode45(@(t,x)TwoSphericalT(t,x,u,par), tsim , X, u);
 
 in=zeros(length(tsim),2);
