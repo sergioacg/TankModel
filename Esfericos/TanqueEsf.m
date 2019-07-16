@@ -66,11 +66,12 @@ plot(F1x,H1x),grid
 title('Variación de nivel h1');
 ylabel('Altura (h)');
 xlabel('Variação F1 com F2=1');
+set(gca,'fontsize',FS)
 subplot(2,1,2);
 plot(F1x,H2x),grid
 title('Variación de nivel h2');
-ylabel('Variação F1 com F2=1');
-xlabel('Abertura de Valvula a1');
+ylabel('Altura (h)');
+xlabel('Variação F1 com F2=1');
 set(gca,'fontsize',FS)
 
 %Encuentra el estado Estacionario
