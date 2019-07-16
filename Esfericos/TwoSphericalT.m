@@ -2,8 +2,8 @@ function dhdt = TwoSphericalT(t,x,u,par)
 
 %% Datos   
 % Entradas
-Fi1  = u.F1;         %h^-1  (Flujo)
-Fi2  = u.F2;          %h^-1  (Flujo)
+Fi1  = u(1);         %h^-1  (Flujo)
+Fi2  = u(2);          %h^-1  (Flujo)
 
 %Parametros
 R1 = par.R1;  %Radio 1 [m]
